@@ -2,7 +2,10 @@
 
 
 ## 项目描述
-采用Self-training和Consistency learning结合的思路：训练采用Self-training方法，伪标签的处理采用Consistency learning方法，多次迭代训练，推理时多尺度和翻转增强，最后融合多次最好的结果。
+
+1.模型选用在FCN基础上修改的Fcn2，增加了OCRHead，并对两个分割头的结果进行早期平均融合。
+
+2.采用Self-training和Consistency learning结合的思路：训练采用Self-training方法，伪标签的处理采用Consistency learning方法，多次迭代训练，推理时多尺度和翻转增强，最后融合多次最好的结果。
 
 
 
