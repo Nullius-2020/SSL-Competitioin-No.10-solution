@@ -1,0 +1,59 @@
+batch_size: 8
+iters: 40000
+
+train_dataset:
+  type: Dataset
+  dataset_root: /home/aistudio
+  train_path: /home/aistudio/train.txt
+  num_classes: 2
+  transforms:
+    - type: RandomHorizontalFlip
+    - type: RandomVerticalFlip
+    - type: Resize
+      target_size: [256, 256]
+    - type: Normalize
+  mode: train
+
+val_dataset:
+  type: Dataset
+  dataset_root: /home/aistudio
+  val_path: /home/aistudio/val.txt
+  num_classes: 2
+  transforms:
+    - type: Resize
+      target_size: [256, 256]
+    - type: Normalize
+  mode: val
+
+
+model:
+  type: FCN2
+  backbone:
+    type: HRNet_W48
+    has_se: True
+    #pretrained: https://bj.bcebos.com/paddleseg/dygraph/hrnet_w48_ssld.tar.gz
+  num_classes: 2
+  pretrained: work/model_fcn2_0802_0.005_0.76038_20000/best_model/model.pdparams
+  backbone_indices: [0]
+
+optimizer:
+  type: sgd
+  momentum: 0.9
+  weight_decay: 4.0e-5
+
+lr_scheduler:
+  type: PolynomialDecay
+  learning_rate: 0.01
+  end_lr: 0
+  power: 0.9
+    
+loss:
+  types:
+    - type: CrossEntropyLoss
+      ignore_index: 255
+  coef: [1]
+
+test_config:
+    is_slide: True
+    crop_size: [256, 256]
+    stride: [128, 128]
