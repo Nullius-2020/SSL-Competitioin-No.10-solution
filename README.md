@@ -6,12 +6,15 @@
 
 
 ## 项目结构
-```
--|data
--|work
 -README.MD
--xxx.ipynb
+-2162311.ipynb   可在AiStuio中运行的Notebook文件
+-check.py        数据检查和分析
+-fcn2.py         用于PaddleSeg中的模型文件
+-fcn2.yml        有监督训练的配置文件
+-fcn2_pl.yml     半监督训练的配置文件
+-vote.py         用于融合多个模型结果的文件
+
 ```
-## 使用方式
-A：在AI Studio上[运行本项目](https://aistudio.baidu.com/aistudio/projectdetail/2162311)
-B：此处由项目作者进行撰写使用方式。
+## 一键运行
+在AI Studio上一键[运行本项目](https://aistudio.baidu.com/aistudio/projectdetail/2162311)
+
