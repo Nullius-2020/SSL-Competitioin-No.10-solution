@@ -28,3 +28,8 @@
 ## 一键运行
 在AI Studio上一键[运行本项目](https://aistudio.baidu.com/aistudio/projectdetail/2162311)
 
+## 模型和提交文件
+
+百度网盘
+链接：https://pan.baidu.com/s/1rhjqD88UFr90fNt-i8r_oQ 
+提取码：kybv
