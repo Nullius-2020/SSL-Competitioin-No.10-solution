@@ -22,7 +22,6 @@
 -vote.py         用于融合多个模型结果的文件
 
 
-```
 ## 一键运行
 在AI Studio上一键[运行本项目](https://aistudio.baidu.com/aistudio/projectdetail/2162311)
 
